@@ -89,32 +89,20 @@ document.addEventListener("dblclick", addBoostrap)
 
 
 var viewButtons = document.querySelectorAll("button.btn.btn-sm.btn-success")
-// var cardsList = document.querySelectorAll("div.col-md-4")
 var reduced = false
 
 
-// console.log(viewButtons)
-
-// function reduce(e) {
-//     e.relatedTarget.removeChild(p)
-// }
-
-
 function reduce() {
-    var card = document.querySelectorAll("div.col-md-4")[0]
-    let p = card.querySelector("p")
+    var card = this.closest("div.col-md-4")
+    var p = card.querySelector("p")
     var image = card.querySelector("div img")
     if (reduced === false) {
-        // let card = document.querySelectorAll("div.card-body")[0]
-        // let text = card.querySelector("p")
-        p.innerHTML = null
+        p.style.display = "none"
         image.style.height = "20%";
         image.style.width = "20%";
         reduced = true
     } else if (reduced === true) {
-        // let card = document.querySelectorAll("div.card-body")[0]
-        // let text = card.querySelector("p")
-        p.innerHTML = "L’HyperText Markup Language, généralement abrégé HTML, est le langage de balisage conçu pour représenter les pages web"
+        p.style.display = "block"
         image.style.height = "100%";
         image.style.width = "100%";
         reduced = false
@@ -122,9 +110,10 @@ function reduce() {
 }
 
 
-
-// viewButtons[0].addEventListener("mouseover", reduce)
 viewButtons.forEach(function(button) {
     button.addEventListener("mouseover", reduce)
 })
+
+// ######################################## FONCTION 7 ############################################################
+
 
