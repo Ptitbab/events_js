@@ -36,7 +36,7 @@ menuBtn.addEventListener("click", removeAddCollapse);
 var editBtn = document.querySelector("button.btn.btn-sm.btn-outline-secondary");
 
 function colorRed() {
-    editBtn.style.color = "red"
+    document.querySelector("div.col-md-4 div.card-body p").style.color = "red"
 }
 
 editBtn.addEventListener("click", colorRed);
@@ -44,14 +44,15 @@ editBtn.addEventListener("click", colorRed);
 // ######################################## FONCTION 4 ############################################################
 
 var editBtn2 = document.querySelectorAll("button.btn.btn-sm.btn-outline-secondary")[1];
+// var cardList = document.querySelectorAll("div.col-md-4 div.card-body p")
 var vert = false
 
 function changeToGreen() {
     if (vert === false) {
-        editBtn2.style.color = "green";
+        document.querySelectorAll("div.col-md-4 div.card-body p")[1].style.color = "green";
         vert = true
     } else if (vert === true) {
-        editBtn2.style.color = null;
+        document.querySelectorAll("div.col-md-4 div.card-body p")[1].style.color = null;
         vert = false
     }   
 }
